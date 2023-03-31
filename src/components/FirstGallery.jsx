@@ -7,16 +7,23 @@ class FirstGallery extends Component {
   };
 
   async componentDidMount() {
-    const response = await fetch(
-      "https://www.omdbapi.com/?apikey=60534065&s=harry%20potter",
-    );
-    const data = await response.json();
-    const movies = data.Search.slice(0, 6);
-    this.setState({ movies });
+    try {
+      const response = await fetch(
+        "https://www.omdbapi.com/?apikey=60534065&s=harry%20potter",
+      );
+      const data = await response.json();
+      const movies = data.Search.slice(0, 6);
+      this.setState({ movies });
+    } catch (error) {
+      this.setState({ error });
+    }
   }
 
   render() {
-    const { movies } = this.state;
+    const { movies, error } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    }
     return (
       <Container fluid>
         <Row className="justify-content-center ">
