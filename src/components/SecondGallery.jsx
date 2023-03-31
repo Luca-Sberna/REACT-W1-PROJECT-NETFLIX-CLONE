@@ -1,20 +1,20 @@
-import { Container, Row, Col, Carousel, CarouselItem } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { Component } from "react";
 
 class SecondGallery extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movies: [],
-    };
-  }
+  state = {
+    movies: [],
+  };
+
   async componentDidMount() {
     const response = await fetch(
       "http://www.omdbapi.com/?apikey=60534065&s=lord-of-the-rings",
     );
     const data = await response.json();
-    this.setState({ movies: data.Search });
+    const movies = data.Search.slice(0, 6); // Mostra solo i primi 4 film
+    this.setState({ movies });
   }
+
   render() {
     const { movies } = this.state;
     return (
@@ -24,6 +24,7 @@ class SecondGallery extends Component {
           <Col xs={12}>
             {movies.map((movie) => (
               <img
+                key={movie.imdbID}
                 src={movie.Poster}
                 alt={movie.Title}
                 className="movie-poster p-2"
