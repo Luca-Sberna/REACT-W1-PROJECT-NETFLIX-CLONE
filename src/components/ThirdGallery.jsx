@@ -12,7 +12,7 @@ class ThirdGallery extends Component {
         "http://www.omdbapi.com/?apikey=60534065&s=fast-and-furious",
       );
       const data = await response.json();
-      const movies = data.Search.slice(0, 6); // Mostra solo i primi 6 film
+      const movies = data.Search.slice(0, 6);
       this.setState({ movies });
     } catch (error) {
       this.setState({ error });

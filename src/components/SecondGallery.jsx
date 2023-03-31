@@ -12,7 +12,7 @@ class SecondGallery extends Component {
         "http://www.omdbapi.com/?apikey=60534065&s=lord-of-the-rings",
       );
       const data = await response.json();
-      const movies = data.Search.slice(0, 6); // Mostra solo i primi 4 film
+      const movies = data.Search.slice(0, 6);
       this.setState({ movies });
     } catch (error) {
       this.setState({ error });
