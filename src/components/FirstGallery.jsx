@@ -20,9 +20,9 @@ class FirstGallery extends Component {
     const { movies } = this.state;
     return (
       <Container fluid>
-        <Row className="justify-content-center text-center">
-          <h3 className="text-light text-start p-2">Harry Potter Saga</h3>
-          <Col xs={12}>
+        <Row className="justify-content-center ">
+          <h2 className="text-light text-start p-2">Harry Potter Saga</h2>
+          <Col xs={12} md={12}>
             {movies.map((movie) => (
               <img
                 src={movie.Poster}

@@ -4,7 +4,7 @@ const MyNav = () => (
   <>
     <header>
       <div class="container-logo ">
-        <img src="./assets\img\netflix_logo.png" />
+        <img src="./assets/img/logo.png" alt="logo" />
       </div>
 
       <nav class="first-nav">

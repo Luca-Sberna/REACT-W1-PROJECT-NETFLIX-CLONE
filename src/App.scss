@@ -92,10 +92,15 @@ main {
     }
   }
 }
-
+img {
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+}
 .movie-poster {
   height: 25rem;
-  width: 18rem; /* o qualsiasi altra larghezza che preferisci */
 }
 /* tutta la zona footer e link  */
 
