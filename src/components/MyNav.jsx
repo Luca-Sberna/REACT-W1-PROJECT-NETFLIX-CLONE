@@ -1,13 +1,15 @@
 import {} from "react-bootstrap";
+import logo from "../assets/img/logo.png";
+import avatar from "../assets/img/avatar.png";
 
 const MyNav = () => (
   <>
     <header>
       <div class="container-logo ">
-        <img src="./assets/img/logo.png" alt="logo" />
+        <img src={logo} alt="logo" className="img-fluid" />
       </div>
 
-      <nav class="first-nav">
+      <nav class="first-nav d-flex align-items-center">
         <ul class="nav">
           <li class="nav-item">
             <a
@@ -41,7 +43,7 @@ const MyNav = () => (
         </ul>
       </nav>
 
-      <nav class="second-nav ">
+      <nav class="second-nav  d-flex align-items-center">
         <ul class="nav flex-nowrap">
           <li class="nav-item">
             <a href="#" class="nav-link rounded-start">
@@ -86,7 +88,7 @@ const MyNav = () => (
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <img src="assets/img/avatar.png" width="25px" alt="avatar" />
+              <img src={avatar} width="25px" alt="avatar" />
             </button>
             <ul class="dropdown-menu dropdown-menu-dark bg-danger shadow-lg">
               <li>
