@@ -7,16 +7,23 @@ class SecondGallery extends Component {
   };
 
   async componentDidMount() {
-    const response = await fetch(
-      "http://www.omdbapi.com/?apikey=60534065&s=lord-of-the-rings",
-    );
-    const data = await response.json();
-    const movies = data.Search.slice(0, 6); // Mostra solo i primi 4 film
-    this.setState({ movies });
+    try {
+      const response = await fetch(
+        "http://www.omdbapi.com/?apikey=60534065&s=lord-of-the-rings",
+      );
+      const data = await response.json();
+      const movies = data.Search.slice(0, 6); // Mostra solo i primi 4 film
+      this.setState({ movies });
+    } catch (error) {
+      this.setState({ error });
+    }
   }
 
   render() {
-    const { movies } = this.state;
+    const { movies, error } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    }
     return (
       <Container fluid className="py-5">
         <Row className="justify-content-center ">
