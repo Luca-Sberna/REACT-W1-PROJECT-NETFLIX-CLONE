@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Carousel } from "react-bootstrap";
 import { Component } from "react";
 
 class SecondGallery extends Component {
@@ -22,14 +22,23 @@ class SecondGallery extends Component {
         <Row className="justify-content-center ">
           <h2 className="text-light text-start p-2">Lord Of The Rings Saga</h2>
           <Col xs={12}>
-            {movies.map((movie) => (
-              <img
-                key={movie.imdbID}
-                src={movie.Poster}
-                alt={movie.Title}
-                className="movie-poster p-2"
-              />
-            ))}
+            <Carousel indicators={null}>
+              {[...Array(Math.ceil(movies.length / 3))].map((_, index) => (
+                <Carousel.Item key={index}>
+                  <Row>
+                    {movies.slice(index * 3, (index + 1) * 6).map((movie) => (
+                      <Col xs={2} key={movie.imdbID}>
+                        <img
+                          src={movie.Poster}
+                          alt={movie.Title}
+                          className="img-fluid h-100"
+                        />
+                      </Col>
+                    ))}
+                  </Row>
+                </Carousel.Item>
+              ))}
+            </Carousel>
           </Col>
         </Row>
       </Container>
