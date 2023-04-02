@@ -4,6 +4,8 @@ import { Component } from "react";
 class ThirdGallery extends Component {
   state = {
     movies: [],
+    loading: true,
+    error: null,
   };
 
   async componentDidMount() {
@@ -11,11 +13,13 @@ class ThirdGallery extends Component {
       const response = await fetch(
         "http://www.omdbapi.com/?apikey=60534065&s=fast-and-furious",
       );
-      const data = await response.json();
-      const movies = data.Search.slice(0, 6);
-      this.setState({ movies });
+      if (response.ok) {
+        const data = await response.json();
+        const movies = data.Search.slice(0, 6);
+        this.setState({ movies, loading: false });
+      }
     } catch (error) {
-      this.setState({ error });
+      this.setState({ error, loading: false });
     }
   }
 

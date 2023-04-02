@@ -7,6 +7,7 @@ import MyNav from './components/MyNav';
 import SecondGallery from './components/SecondGallery';
 import ThirdGallery from './components/ThirdGallery';
 
+
 function App() {
   return (
     <div className="App px-3">

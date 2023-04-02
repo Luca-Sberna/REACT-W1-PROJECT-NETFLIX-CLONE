@@ -17,9 +17,7 @@ body {
 
 header {
   padding: 10px 0 0 0;
-  display: grid;
-  position: sticky;
-  grid-template-columns: 1fr 6fr 1fr;
+  display: flex;
   width: 100%;
   top: 0;
   z-index: 99;
