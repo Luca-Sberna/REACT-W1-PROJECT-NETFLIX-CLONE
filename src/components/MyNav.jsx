@@ -7,7 +7,8 @@ import {
 } from "react-bootstrap";
 import logo from "../assets/img/logo.png";
 import avatar from "../assets/img/avatar.png";
-import Profile from "./Profile.jsx";
+import Profile from "./Profile";
+import Settings from "./Settings";
 
 const MyNav = () => (
   <Navbar sticky="top" expand="md">
@@ -86,10 +87,11 @@ const MyNav = () => (
                   variant="dark"
                   className="bg-primary border border-dark shadow-lg "
                 >
-                  <Dropdown.Item href="./Profile.jsx">
+                  <Dropdown.Item href="./profile.jsx">
                     Edit Profile
                   </Dropdown.Item>
-                  <Dropdown.Item href="#">Settings</Dropdown.Item>
+
+                  <Dropdown.Item href="./settings.jsx">Settings</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </Nav.Item>
