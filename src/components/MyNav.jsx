@@ -87,11 +87,13 @@ const MyNav = () => (
                   variant="dark"
                   className="bg-primary border border-dark shadow-lg "
                 >
-                  <Dropdown.Item href="./profile.jsx">
+                  <Dropdown.Item href="./profile.jsx" className="rounded">
                     Edit Profile
                   </Dropdown.Item>
 
-                  <Dropdown.Item href="./settings.jsx">Settings</Dropdown.Item>
+                  <Dropdown.Item href="./settings.jsx" className="rounded">
+                    Settings
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </Nav.Item>

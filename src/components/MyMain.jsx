@@ -2,10 +2,10 @@ import { Button, Dropdown } from "react-bootstrap";
 
 const MyMain = () => (
   <>
-    <div class=" d-flex m-0 p-0 justify-content-between align-items-center pt-4">
-      <div class="d-flex align-items-center">
-        <h1 class="text-secondary  p-2">TV Shows</h1>
-        <Dropdown class="dropdown py-3 align-items-center">
+    <div className=" d-flex m-0 p-0 justify-content-between align-items-center pt-4">
+      <div className="d-flex align-items-center">
+        <h1 className="text-secondary  p-2">TV Shows</h1>
+        <Dropdown className="dropdown py-3 align-items-center">
           <Dropdown.Toggle
             variant="primary"
             className="border border-dark ms-5"
@@ -14,17 +14,17 @@ const MyMain = () => (
           </Dropdown.Toggle>
           <Dropdown.Menu className="dropdown-menu dropdown-menu-dark border border-dark bg-primary shadow-lg">
             <Dropdown.Item>
-              <a class="dropdown-item text-secondary" href="#">
+              <a className="dropdown-item text-secondary rounded" href="#">
                 Action
               </a>
             </Dropdown.Item>
             <Dropdown.Item>
-              <a class="dropdown-item text-secondary" href="#">
+              <a className="dropdown-item text-secondary rounded" href="#">
                 Fantasy
               </a>
             </Dropdown.Item>
             <Dropdown.Item>
-              <a class="dropdown-item text-secondary" href="#">
+              <a className="dropdown-item text-secondary rounded" href="#">
                 Comedy
               </a>
             </Dropdown.Item>

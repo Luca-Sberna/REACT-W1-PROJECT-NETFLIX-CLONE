@@ -61,7 +61,7 @@ const MyFooter = () => (
       <button type="button" className="btn btn-outline-success">
         Service Code
       </button>
-      <p class="pt-3">&copy 1997-2018 Netflix, Inc.</p>
+      <p class="pt-3">©️ 1997-2018 Netflix, Inc.</p>
     </footer>
   </Container>
 );
