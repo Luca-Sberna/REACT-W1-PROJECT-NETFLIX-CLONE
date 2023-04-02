@@ -1,4 +1,4 @@
-import { Container, Row, Col, Carousel } from "react-bootstrap";
+import { Container, Row, Col, Carousel, Spinner } from "react-bootstrap";
 import { Component } from "react";
 
 class ThirdGallery extends Component {
@@ -20,9 +20,29 @@ class ThirdGallery extends Component {
   }
 
   render() {
-    const { movies, error } = this.state;
+    const { movies, loading, error } = this.state;
+
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div>Render Error: {error.message}</div>;
+    }
+
+    if (loading) {
+      return (
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-center">
+              <Spinner
+                role="status"
+                animation="border"
+                variant="danger"
+              ></Spinner>
+              <span className="sr-only text-center text-light fs-1 fw-bold ms-1">
+                Loading...
+              </span>
+            </div>
+          </div>
+        </div>
+      );
     }
     return (
       <Container fluid>

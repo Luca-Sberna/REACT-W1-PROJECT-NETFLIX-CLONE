@@ -1,9 +1,11 @@
-import { Container, Row, Col, Carousel } from "react-bootstrap";
+import { Container, Row, Col, Carousel, Spinner } from "react-bootstrap";
 import { Component } from "react";
 
 class FirstGallery extends Component {
   state = {
     movies: [],
+    loading: true,
+    error: null,
   };
 
   async componentDidMount() {
@@ -11,19 +13,42 @@ class FirstGallery extends Component {
       const response = await fetch(
         "https://www.omdbapi.com/?apikey=60534065&s=harry%20potter",
       );
-      const data = await response.json();
-      const movies = data.Search.slice(0, 6);
-      this.setState({ movies });
+      if (response.ok) {
+        const data = await response.json();
+        const movies = data.Search.slice(0, 6);
+        this.setState({ movies, loading: false });
+      }
     } catch (error) {
-      this.setState({ error });
+      this.setState({ error, loading: false });
     }
   }
 
   render() {
-    const { movies, error } = this.state;
+    const { movies, loading, error } = this.state;
+
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div>Render Error: {error.message}</div>;
     }
+
+    if (loading) {
+      return (
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-center">
+              <Spinner
+                role="status"
+                animation="border"
+                variant="danger"
+              ></Spinner>
+              <span className="sr-only text-center text-light fs-1 fw-bold ms-1">
+                Loading...
+              </span>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <Container fluid>
         <Row className="justify-content-center ">

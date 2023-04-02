@@ -1,4 +1,4 @@
-import {} from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 import logo from "../assets/img/logo.png";
 import avatar from "../assets/img/avatar.png";
 
@@ -81,28 +81,36 @@ const MyNav = () => (
             </a>
           </li>
 
-          <li class="nav-item ">
-            <button
-              class="btn btn-primary dropdown-toggle bg-primary "
+          <Dropdown class="nav-item ">
+            <Dropdown.Toggle
+              className="btn btn-primary dropdown-toggle bg-primary "
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               <img src={avatar} width="25px" alt="avatar" />
-            </button>
-            <ul class="dropdown-menu dropdown-menu-dark bg-danger shadow-lg">
-              <li>
-                <a class="dropdown-item" target="_blank" href="profile.html">
+            </Dropdown.Toggle>
+            <Dropdown.Menu className="dropdown-menu dropdown-menu-dark bg-primary border border-dark shadow-lg">
+              <Dropdown.Item>
+                <a
+                  className="dropdown-item"
+                  target="_blank"
+                  href="profile.html"
+                >
                   Edit Profile
                 </a>
-              </li>
-              <li>
-                <a class="dropdown-item" target="_blank" href="settings.html">
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <a
+                  className="dropdown-item"
+                  target="_blank"
+                  href="settings.html"
+                >
                   Settings
                 </a>
-              </li>
-            </ul>
-          </li>
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </ul>
       </nav>
     </header>
