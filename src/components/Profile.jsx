@@ -25,14 +25,14 @@ const Profile = () => (
               <div className=" py-3 border-bottom border-dark">
                 <p className="text-secondary fs-5">Language:</p>
                 <button
-                  className="btn btn-danger border  border-secondary dropdown-toggle px-3 py-1  "
+                  className="btn btn-black text-light border  border-secondary dropdown-toggle px-3 py-1  "
                   type="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   ---
                 </button>
-                <ul class="dropdown-menu dropdown-menu-dark bg-danger">
+                <ul class="dropdown-menu dropdown-menu-dark bg-dark">
                   <li>
                     <a className="dropdown-item text-secondary" href="#">
                       English

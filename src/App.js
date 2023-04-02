@@ -19,8 +19,8 @@ function App() {
       <SecondGallery />
       <ThirdGallery />
       <MyFooter />
-      {/* <Profile /> */}
-      {/* <Settings / */}
+      {<Profile />}
+      {/* <Settings /> */}
     </div>
   );
 }
